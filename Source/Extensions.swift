@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UITableView {
+extension UICollectionView {
     var swipeCells: [SwipeTableViewCell] {
-        return visibleCells as? [SwipeTableViewCell] ?? []
+        return visibleCells.flatMap({ $0 as? SwipeTableViewCell })
     }
     
     func hideSwipeCell() {
